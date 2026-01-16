@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /jepara-furniture/
+    
+    # Jika file atau direktori ada, jangan di-rewrite
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Rewrite semua request ke index.php
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Prevent CI index.php from being accessed
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
+</Files>

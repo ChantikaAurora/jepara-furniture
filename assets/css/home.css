@@ -1,0 +1,652 @@
+/* ============================================
+   HOME PAGE STYLES - Jepara Furniture
+   Consistent with template design
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+    background: linear-gradient(135deg, #2d5a4a 0%, #1a3a2e 100%);
+    padding: 10px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(139, 103, 71, 0.1);
+    border-radius: 50%;
+    top: -200px;
+    right: -150px;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(139, 103, 71, 0.08);
+    border-radius: 50%;
+    bottom: -150px;
+    left: -100px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image {
+    position: relative;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+
+.section-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #2d1810;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #8B5E3C, #d4a574);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.view-all {
+    color: #8B5E3C;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    transition: gap 0.3s ease;
+}
+
+.view-all:hover {
+    gap: 12px;
+}
+
+/* ============================================
+   CATEGORIES SECTION
+   ============================================ */
+
+.categories-section {
+    padding: 80px 0;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.category-card {
+    background: white;
+    border: 2px solid rgba(139, 94, 60, 0.1);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8B5E3C, #d4a574);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover::before {
+    transform: translateY(0);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(139, 94, 60, 0.15);
+    border-color: rgba(139, 94, 60, 0.3);
+}
+
+.category-card i {
+    font-size: 48px;
+    color: #8B5E3C;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.category-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d1810;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 14px;
+    color: #6b5947;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============================================
+   PRODUCTS SECTION
+   ============================================ */
+
+.products-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f1e8 0%, #faf8f3 100%);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(139, 94, 60, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.product-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #f3f4f6;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-info {
+    padding: 24px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d1810;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 50px;
+}
+
+.product-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #8B5E3C;
+    margin-bottom: 15px;
+}
+
+.product-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: #6b5947;
+}
+
+.product-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.product-meta i {
+    font-size: 12px;
+}
+
+.product-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(139, 94, 60, 0.1);
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+
+.features-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 100%);
+    border-radius: 18px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid rgba(139, 94, 60, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #8B5E3C 0%, #6d4a2f 100%);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d1810;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #6b5947;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+
+.testimonials-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 100%);
+    border-radius: 18px;
+    padding: 30px;
+    border: 1px solid rgba(139, 94, 60, 0.1);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 15px;
+}
+
+.rating i {
+    color: #d1d5db;
+    font-size: 18px;
+}
+
+.rating i.active {
+    color: #fbbf24;
+}
+
+.testimonial-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d1810;
+    margin-bottom: 12px;
+}
+
+.testimonial-card p {
+    font-size: 15px;
+    color: #6b5947;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(139, 94, 60, 0.1);
+}
+
+.testimonial-author img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #8B5E3C;
+}
+
+.testimonial-author strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d1810;
+}
+
+.testimonial-author small {
+    display: block;
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+/* ============================================
+   BLOG SECTION
+   ============================================ */
+
+.blog-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f5f1e8 0%, #faf8f3 100%);
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 1px solid rgba(139, 94, 60, 0.1);
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 24px;
+}
+
+.blog-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d1810;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-date {
+    font-size: 13px;
+    color: #6b5947;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+}
+
+.badge-warning {
+    background: rgba(251, 191, 36, 0.95);
+    color: #78350f;
+}
+
+.badge-danger {
+    background: rgba(239, 68, 68, 0.95);
+    color: white;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    padding: 15px 35px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #d4a574 0%, #c69860 100%);
+    color: #1a3a2e;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+.btn-sm {
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+/* Product actions specific buttons */
+.product-actions .btn-outline {
+    background: transparent;
+    color: #8B5E3C;
+    border: 1.5px solid #8B5E3C;
+}
+
+.product-actions .btn-outline:hover {
+    background: #8B5E3C;
+    color: white;
+}
+
+.product-actions .btn-primary {
+    background: linear-gradient(135deg, #8B5E3C 0%, #6d4a2f 100%);
+    color: white;
+    border: none;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .categories-grid,
+    .products-grid,
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-image {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .categories-grid,
+    .products-grid,
+    .testimonials-grid,
+    .blog-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .categories-grid,
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid,
+    .testimonials-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-section,
+    .products-section,
+    .testimonials-section,
+    .blog-section,
+    .features-section {
+        padding: 50px 0;
+    }
+}
