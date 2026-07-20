@@ -7,7 +7,6 @@ Jepara Furniture adalah aplikasi **e-commerce berbasis web** untuk penjualan fur
 ## ✨ Fitur Utama
 
 **Untuk Pelanggan**
-- **Framework:** PHP CodeIgniter (versi 3.x)
 - 🛒 Katalog produk & kategori furniture
 - 🛍️ Keranjang belanja (*cart*) dan proses checkout
 - 💳 Instruksi & konfirmasi pembayaran (upload bukti transfer)
