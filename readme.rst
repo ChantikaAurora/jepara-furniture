@@ -1,71 +1,127 @@
-###################
-What is CodeIgniter
-###################
+# 🪑 Jepara Furniture
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Jepara Furniture adalah aplikasi **e-commerce berbasis web** untuk penjualan furniture khas Jepara, dibangun menggunakan **PHP CodeIgniter**. Aplikasi ini mencakup katalog produk, keranjang belanja, checkout, konfirmasi pembayaran manual, layanan rehap (perbaikan) furniture, blog, hingga panel admin untuk mengelola toko.
 
-*******************
-Release Information
-*******************
+---
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+## ✨ Fitur Utama
 
-**************************
-Changelog and New Features
-**************************
+**Untuk Pelanggan**
+- 🛒 Katalog produk & kategori furniture
+- 🛍️ Keranjang belanja (*cart*) dan proses checkout
+- 💳 Instruksi & konfirmasi pembayaran (upload bukti transfer)
+- 🔧 **Layanan Rehap** — pengajuan permintaan perbaikan/renovasi furniture
+- 📝 Blog seputar furniture
+- ⭐ Testimoni pelanggan
+- 🔐 Autentikasi (login/register) & profil pengguna
+- 🔔 Notifikasi pesanan
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+**Untuk Admin**
+- 📊 Dashboard admin
+- 🏬 Manajemen profil toko
+- 📦 Manajemen produk, kategori, pesanan, dan pembayaran
+- 📈 Laporan (report) penjualan
 
-*******************
-Server Requirements
-*******************
+---
 
-PHP version 5.6 or newer is recommended.
+## 🛠️ Tech Stack
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+- **Framework:** PHP CodeIgniter (versi 3.x)
+- **Database:** MySQL
+- **Frontend:** HTML, CSS, JavaScript (dengan asset bawaan di folder `assets/`)
+- **Package Manager:** Composer
 
-************
-Installation
-************
+---
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+## 📁 Struktur Folder
 
-*******
-License
-*******
+```
+jepara-furniture/
+├── application/
+│   ├── controllers/     # Auth, Cart, Checkout, Payment, Product, Rehap, Blog, dll.
+│   │   └── admin/       # Controller khusus admin (Profil_toko, dll.)
+│   ├── models/          # Cart_model, Order_model, Payment_model, Produk_model, dll.
+│   ├── views/           # Tampilan halaman
+│   ├── config/          # Konfigurasi aplikasi & database
+│   └── helpers/
+├── assets/              # CSS, JS, gambar
+├── system/              # Core framework CodeIgniter
+├── uploads/             # File upload (produk, bukti bayar, blog, testimonial, dll.)
+├── database_migration.sql
+├── sample_data.sql
+├── composer.json
+└── index.php
+```
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+---
 
-*********
-Resources
-*********
+## 🚀 Instalasi & Menjalankan Proyek
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+### Prasyarat
+- PHP >= 5.6 (disarankan PHP 7.x untuk kompatibilitas CodeIgniter 3)
+- MySQL / MariaDB
+- Web server (Apache/Nginx) — misalnya via **XAMPP/Laragon**
+- Composer *(opsional, untuk dependency development)*
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+### 1. Clone Repository
+```bash
+git clone https://github.com/ChantikaAurora/jepara-furniture.git
+cd jepara-furniture
+```
 
-***************
-Acknowledgement
-***************
+### 2. Konfigurasi Database
+Buat database baru bernama `db_jepara_furniture`, lalu import struktur dan data awal:
+```bash
+mysql -u root -p db_jepara_furniture < database_migration.sql
+mysql -u root -p db_jepara_furniture < sample_data.sql
+```
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+Sesuaikan koneksi database di `application/config/database.php` jika diperlukan:
+```php
+$db['default'] = array(
+    'hostname' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'database' => 'db_jepara_furniture',
+    ...
+);
+```
+
+### 3. Konfigurasi Base URL
+Atur base URL aplikasi di `application/config/config.php` sesuai environment lokal, misalnya:
+```php
+$config['base_url'] = 'http://localhost/jepara-furniture/';
+```
+
+### 4. Jalankan Aplikasi
+- Letakkan folder project di direktori web server (misalnya `htdocs` untuk XAMPP)
+- Jalankan Apache & MySQL
+- Akses melalui browser: `http://localhost/jepara-furniture/`
+
+---
+
+## 🗄️ Struktur Database (Ringkasan)
+
+| Tabel               | Deskripsi                                  |
+|---------------------|---------------------------------------------|
+| `cart`              | Data keranjang belanja pengguna             |
+| `orders`            | Data pesanan                                |
+| `order_items`       | Detail item dalam setiap pesanan            |
+| `payments`          | Data & bukti pembayaran                     |
+| `rehap_requests`    | Permintaan layanan rehap furniture          |
+| `blog_posts`        | Konten blog                                 |
+| `testimonials`      | Testimoni pelanggan                         |
+| `notifications`     | Notifikasi untuk pengguna                   |
+| `store_profile`     | Informasi profil toko                       |
+
+---
+
+## 👩‍💻 Kontributor
+
+- **Chantika Aurora Akmal** — Politeknik Negeri Padang, D4 Teknik Rekayasa Perangkat Lunak
+
+---
+
+## 📃 Lisensi
+
+Proyek ini dibangun di atas framework **CodeIgniter** (MIT License). Silakan sesuaikan lisensi proyek ini sesuai kebutuhan Anda.
